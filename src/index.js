@@ -4,7 +4,11 @@ import './custom.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+// import { Amplify } from 'aws-sdk';
+// import Amplify from 'aws-amplify';
+// import awsconfig from './aws-exports';
 
+// Amplify.configure(awsconfig);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

@@ -1,14 +1,27 @@
 
 import '../../App.css';
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { urls } from '../../app/api';
+import { Image } from 'react-bootstrap';
+import { useState,useEffect } from "react"
 
-export function Payment({backgroundImageUrl}) {
+export function Payment({pathurl}) {
+    const [paymentUrl, setPaymentUrl] = useState("/");
+
+    let bgurl = pathurl+"payment_bg.png"
+
+    let buttonurl = pathurl+"payment_back.png"
+
+    let paybuttonurl = pathurl+"payment_pay.png"
+
+    useEffect(() => {
+        getPaymentLink()
+      });
 
     const getPaymentLink = async () => {
-        const res = await axios.post(urls.payment,
+        await axios.post(urls.payment,
             {
                 amount: 100,
                 currency: "EUR",
@@ -59,20 +72,25 @@ export function Payment({backgroundImageUrl}) {
                 }
             }).then((res) => {
                 console.log("RESPONSE RECEIVED: ", res);
-              })
-        return res.data
+                setPaymentUrl(res.data.hosted_payment.payment_url)
+            }).catch(()=>{
+                console.log("catched")
+            })
+        
     }
 
     return (
-        <div className="background-container" style={{backgroundImage:'url("'+backgroundImageUrl+'")'}}>
+        <div className="background-container" style={{backgroundImage:'url("'+bgurl+'")', alignItems: "end",textAlign:'center'}}>
             <div className='row'>
-                <div className='ml-auto col-4 mr-auto'>
-
-                    
-                <button type="button" class="btn btn-primary" onClick={getPaymentLink}>pay</button>
-                    {/* <Link to='/choosephotoframe'>
-                        <button type="button" class="btn btn-primary">Next</button>
-                    </Link> */}
+                <div className='ml-auto col-12 mr-auto' style={{marginBottom: "30rem"}}>
+                    <Link to={paymentUrl} style={{marginBotto: '10rem'}}>
+                        <Image src={paybuttonurl} rounded />
+                    </Link> 
+                </div>
+                <div style={{marginBottom: "5rem"}}>
+                    <Link to='/'>
+                        <Image src={buttonurl} rounded />
+                    </Link>
                 </div>
             </div>
         </div>

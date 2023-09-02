@@ -11,18 +11,20 @@ import { QR } from './pages/qr/QR';
 
 function App() {
 
-  let bgurl = "https://png.pngtree.com/thumb_back/fh260/background/20211031/pngtree-abstract-bg-image_914283.png"
+  let pathurl = "https://photobooth-kiosk-image-internal124714-staging.s3.ap-southeast-2.amazonaws.com/COMPONENT-IMAGE/"
+  
+
 
   return (
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={ }> */}
-            <Route index element={ <Home backgroundImageUrl={bgurl}/>} />
-            <Route path="/payment" element={<Payment backgroundImageUrl={bgurl}/>} />
-            <Route path="/choosephotoframe" element={<ChoosePhotoFrame backgroundImageUrl={bgurl}/>} />
-            <Route path="/shoot" element={<Shoot backgroundImageUrl={bgurl}/>} />
-            <Route path="/filter" element={<ChooseFilter backgroundImageUrl={bgurl}/>} />
-            <Route path="/QR" element={<QR backgroundImageUrl={bgurl}/>} />
+            <Route index element={ <Home pathurl={pathurl}/>} />
+            <Route path="/payment" element={<Payment pathurl={pathurl}/>} />
+            <Route path="/choosephotoframe" element={<ChoosePhotoFrame pathurl={pathurl}/>} />
+            <Route path="/shoot" element={<Shoot pathurl={pathurl}/>} />
+            <Route path="/filter" element={<ChooseFilter pathurl={pathurl}/>} />
+            <Route path="/QR" element={<QR pathurl={pathurl}/>} />
           {/* <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} /> */}

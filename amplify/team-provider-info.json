@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-photoboothkiosk-staging-124714-authRole",
+      "UnauthRoleArn": "arn:aws:iam::050992870464:role/amplify-photoboothkiosk-staging-124714-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::050992870464:role/amplify-photoboothkiosk-staging-124714-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-photoboothkiosk-staging-124714-deployment",
+      "UnauthRoleName": "amplify-photoboothkiosk-staging-124714-unauthRole",
+      "StackName": "amplify-photoboothkiosk-staging-124714",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:050992870464:stack/amplify-photoboothkiosk-staging-124714/d78e3970-498e-11ee-a1eb-027d148e71c2",
+      "AmplifyAppId": "d21o8rrwl2rwnf"
+    },
+    "categories": {
+      "auth": {
+        "photoboothkiosk": {}
+      },
+      "storage": {
+        "s3photoboothkioskimageinternal": {}
+      }
+    }
+  }
+}

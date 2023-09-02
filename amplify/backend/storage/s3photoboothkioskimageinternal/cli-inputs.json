@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3photoboothkioskimageinternal",
+  "bucketName": "photobooth-kiosk-image-internal",
+  "policyUUID": "f4761a1e",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE",
+    "DELETE"
+  ]
+}
