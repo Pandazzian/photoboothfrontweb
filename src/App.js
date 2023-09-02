@@ -1,12 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from './pages/Home';
-import { Payment } from './pages/Payment';
-import { Shoot } from './pages/Shoot';
-import { ChoosePhotoFrame } from './pages/ChoosePhotoFrame';
-import { ChooseFilter } from './pages/ChooseFilter';
-import { QR } from './pages/QR';
+import { Home } from './pages/home/Home';
+import { Payment } from './pages/payment/Payment';
+import { Shoot } from './pages/shoot/Shoot';
+import { ChoosePhotoFrame } from './pages/frame/ChoosePhotoFrame';
+import { ChooseFilter } from './pages/filter/ChooseFilter';
+import { QR } from './pages/qr/QR';
+
 
 function App() {
 
