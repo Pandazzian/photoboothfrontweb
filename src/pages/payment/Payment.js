@@ -8,13 +8,17 @@ import { Image } from 'react-bootstrap';
 import { useState,useEffect } from "react"
 
 export function Payment({pathurl}) {
-    const [paymentUrl, setPaymentUrl] = useState("/");
+    const [paymentUrl, setPaymentUrl] = useState("/choosephotoframe");
 
     let bgurl = pathurl+"payment_bg.png"
 
     let buttonurl = pathurl+"payment_back.png"
 
     let paybuttonurl = pathurl+"payment_pay.png"
+
+    let couponButtonUrl = pathurl+"coupon_code.png"
+
+    let couponUrl = "/coupon"
 
     useEffect(() => {
         getPaymentLink()
@@ -82,9 +86,14 @@ export function Payment({pathurl}) {
     return (
         <div className="background-container" style={{backgroundImage:'url("'+bgurl+'")', alignItems: "end",textAlign:'center'}}>
             <div className='row'>
-                <div className='ml-auto col-12 mr-auto' style={{marginBottom: "30rem"}}>
-                    <Link to={paymentUrl} style={{marginBotto: '10rem'}}>
+                <div className='ml-auto col-12 mr-auto' style={{marginBottom: "10rem"}}>
+                    <Link to={paymentUrl} style={{marginBottom: '10rem'}}>
                         <Image src={paybuttonurl} rounded />
+                    </Link> 
+                </div>
+                <div className='ml-auto col-12 mr-auto' style={{marginBottom: "20rem"}}>
+                    <Link to={couponUrl} style={{marginBottom: '10rem'}}>
+                        <Image src={couponButtonUrl} rounded />
                     </Link> 
                 </div>
                 <div style={{marginBottom: "5rem"}}>

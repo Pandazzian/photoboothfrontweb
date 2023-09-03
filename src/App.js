@@ -7,6 +7,7 @@ import { Shoot } from './pages/shoot/Shoot';
 import { ChoosePhotoFrame } from './pages/frame/ChoosePhotoFrame';
 import { ChooseFilter } from './pages/filter/ChooseFilter';
 import { QR } from './pages/qr/QR';
+import {Coupon} from './pages/payment/Coupon'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         {/* <Route path="/" element={ }> */}
             <Route index element={ <Home pathurl={pathurl}/>} />
             <Route path="/payment" element={<Payment pathurl={pathurl}/>} />
+            <Route path="/coupon" element={<Coupon pathurl={pathurl}/>} />
             <Route path="/choosephotoframe" element={<ChoosePhotoFrame pathurl={pathurl}/>} />
             <Route path="/shoot" element={<Shoot pathurl={pathurl}/>} />
             <Route path="/filter" element={<ChooseFilter pathurl={pathurl}/>} />
