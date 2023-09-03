@@ -25,7 +25,8 @@ export function Payment({pathurl}) {
       });
 
     const getPaymentLink = async () => {
-        await axios.post(urls.payment,
+        await axios
+            .post(urls.payment,
             {
                 amount: 100,
                 currency: "EUR",
@@ -70,9 +71,9 @@ export function Payment({pathurl}) {
                     'Authorization': 'Bearer sk_test_2olFiJeiKA4yDhmnMFPxyk',
                     'PayPlug-Version': '2019-08-06',
                     'Access-Control-Allow-Origin' : '*',
-                    'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                    'Access-Control-Allow-Headers': 'Content-Type',
-                    
+                    'Access-Control-Allow-Methods':'*',
+                    'Access-Control-Allow-Headers': '*',
+                    'Access-Control-Allow-Credentials': true,
                 }
             }).then((res) => {
                 console.log("RESPONSE RECEIVED: ", res);
