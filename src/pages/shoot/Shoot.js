@@ -34,11 +34,6 @@ export function Shoot({pathurl}) {
                     <div className='col-1'></div>
                 </div>
 
-                <div className='col-12 row'>
-                    <div className='col-4'></div>
-                    <button className='col-4' onClick={capture}>Capture Image</button>
-                    <div className='col-4'></div>
-                </div>
 
                 <div className='col-12 row' style={{marginTop:"600px"}}>
                     <div className='col-4'></div>
