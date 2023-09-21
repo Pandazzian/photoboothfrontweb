@@ -7,12 +7,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import { Amplify } from 'aws-sdk';
 // import Amplify from 'aws-amplify';
 // import awsconfig from './aws-exports';
+import ConfigStore from './redux/ConfigStore';
+import { Provider } from 'react-redux';
 
 // Amplify.configure(awsconfig);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={ConfigStore}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
