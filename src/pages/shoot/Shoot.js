@@ -13,12 +13,19 @@ export function Shoot({pathurl}) {
 
     const webcamRef = useRef(null);
     const dispatch = useDispatch();
-    // const capturedImage = useSelector((state) => state.Images);
+    const capturedImages = useSelector((state) => state.Images);
+    const selectedFrame = useSelector((state)=>state.frame)
+
 
     const capture = () => {
         const imageSrc = webcamRef.current.getScreenshot();
         dispatch(addImage(imageSrc));
     };
+
+    const log = () => {
+        console.log(selectedFrame.frame.payload.ImagePositions.items)
+        console.log(capturedImages.images)
+    }
 
     return (
         <div className="background-container" style={{backgroundImage:'url("'+bgurl+'")', alignItems: "end"}}>
@@ -34,7 +41,19 @@ export function Shoot({pathurl}) {
                     <div className='col-1'></div>
                 </div>
 
-
+                <div className='row col-12' style={{backgroundImage:'url("'+selectedFrame.frame.payload.imageurl+'")', alignItems: "end"}}>
+                    <button onClick={()=>log()}>que?</button>
+                    {capturedImages.images.map((capturedImage,index)=>
+                    <div style={{
+                        width:`${selectedFrame.frame.payload.ImagePositions.items[index].width}px`,
+                        height:`${selectedFrame.frame.payload.ImagePositions.items[index].height}px`,
+                        right:`${selectedFrame.frame.payload.ImagePositions.items[index].xpos}px`,
+                        bottom:`${selectedFrame.frame.payload.ImagePositions.items[index].ypos}px`}}>
+                        <Image src={capturedImage.payload} alt="Captured" style={{width:"100%",height:"100%"}}/>
+                    </div>
+                    )}
+                </div>
+                <button onClick={()=>log()}>que?</button>
                 <div className='col-12 row' style={{marginTop:"600px"}}>
                     <div className='col-4'></div>
                     <div className='ml-auto col-4 mr-auto' style={{marginBottom:"5rem"}}>
