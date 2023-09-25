@@ -54,6 +54,7 @@ export function ChoosePhotoFrame({pathurl}) {
         .post(API_URL, { query }, axiosConfig)
         .then((response) => {
             setData(response.data);
+            dispatch(setFrame(response.data.data.listPhotoFrames.items[0]))
         })
         .catch((error) => {
             console.error('Error:', error);
